@@ -1,12 +1,29 @@
 {
-  "name": "webpack-exp-all",
+  "name": "webpack-treeshake",
   "version": "1.0.0",
-  "description": "",
+  "description": "TreaShake Webpack example",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "prod": "cross-env NODE_ENV=production webpack-dev-server --env.prod=true",
+    "build": "cross-env NODE_ENV=production webpack --env.prod=true"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "William Koza",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "cross-env": "3.1.4",
+    "css-loader": "0.14.5",
+    "file-loader": "0.10.1",
+    "style-loader": "0.13.2",
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.4.1"
+  },
+  "dependencies": {
+    "fwad": "file:fwad"
+  }
 }

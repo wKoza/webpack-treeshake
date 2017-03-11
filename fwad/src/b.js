@@ -1,3 +1,3 @@
 export function b() {
-    return 'b';
+    return 'method b';
 }

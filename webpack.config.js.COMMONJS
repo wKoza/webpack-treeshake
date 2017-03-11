@@ -1,48 +1,7 @@
-/*var webpack = require('webpack');
-
-var uglify = new webpack.optimize.UglifyJsPlugin({
-    compress: false,
-    mangle: false,
-    beautify: true
-});
-
-var plugins = [
-    new webpack.optimize.CommonsChunkPlugin({
-        name: 'common',
-        minChunks: 2
-    }),
-    uglify
-];
-
-module.exports = [{
-    entry: {
-        'entry1': './app1/entry1',
-        'entry2': './app1/entry2'
-    },
-    output: {
-        path: 'dist/app1',
-        filename: "[name].js"
-    },
-    plugins: plugins
-}, {
-    entry: {
-        'entry1': './app2/entry1',
-        'entry2': './app2/entry2'
-    },
-    output: {
-        path: 'dist/app2',
-        filename: "[name].js"
-    },
-    plugins: plugins
-}];
-
-*/
-
-
 const webpack = require('webpack');
 const path = require('path');
 
-const sourcePath = path.join(__dirname, './app1');
+const sourcePath = path.join(__dirname, './app2');
 const staticsPath = path.join(__dirname, './dist');
 
 module.exports = function (env) {
@@ -107,14 +66,14 @@ module.exports = function (env) {
                     test: /\.js$/,
                     exclude: /node_modules/,
                     loader : 'babel-loader',
-                    options: { presets: [ [ 'es2015', { modules: false } ] ] }
+                    options: { presets: [ [ 'es2015'] ] }
 
                 },
             ],
         },
         plugins,
         devServer: {
-            contentBase: './app1',
+            contentBase: './app2',
             historyApiFallback: true,
             port: 3000,
             compress: isProd,

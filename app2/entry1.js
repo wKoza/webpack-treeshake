@@ -1,5 +1,4 @@
-import { a } from '../lib/src/a';
-import { c } from '../lib/src/c';
+var fwad= require('fwad');
 
-console.log(a());
-console.log(c());
+console.log(fwad.a());
+console.log(fwad.c());
